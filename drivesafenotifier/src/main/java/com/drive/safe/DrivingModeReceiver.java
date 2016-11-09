@@ -21,8 +21,6 @@ public class DrivingModeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         if (!TextUtils.equals(FENCE_RECEIVER_ACTION, intent.getAction())) {
-            Toast.makeText(context, "Received an unsupported action in FenceReceiver: action="
-                    + intent.getAction(), Toast.LENGTH_SHORT).show();
             return;
         }
 

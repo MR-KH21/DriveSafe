@@ -7,8 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.text.Html;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.awareness.Awareness;
@@ -108,9 +111,28 @@ public class DriveSafeLifeCycleListener implements Application.ActivityLifecycle
 
     @Override
     public void update(Observable observable, Object o) {
-        Toast.makeText(currentActivity, "object "+o.toString(), Toast.LENGTH_SHORT).show();
+
         if (currentActivity != null && "true".equals(o.toString())) {
+            Popup showMessagePopup = new Popup(currentActivity, Html.fromHtml( currentActivity.getString(R.string.msg)), new Popup.Listener() {
+                @Override
+                public void onCancel(Popup popup) {
+
+                    popup.performAnimationToHide();
+                }
+
+                @Override
+                public void onCloseAppSelected(Popup popup) {
+                    ((ViewGroup)popup.getParent()).removeView(popup);
+                    Intent i = new Intent(Intent.ACTION_MAIN);
+                    i.addCategory(Intent.CATEGORY_HOME);
+                    currentActivity.startActivity(i);
+                }
+            });
+            currentActivity.addContentView(showMessagePopup, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            showMessagePopup.performAnimationToShow();
 
         }
+
+
     }
 }
