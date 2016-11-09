@@ -22,4 +22,4 @@ The dev branch has a sample app please give it a look.
 
 
 # Note :
-The liberary is still too young and many features to be added. Please report any bug you face and feel free to contact me if you have any question.
+The library is still young and many features to be added. Please report any bug you face and feel free to contact me if you have any question.
