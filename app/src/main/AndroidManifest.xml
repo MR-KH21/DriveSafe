@@ -18,9 +18,9 @@
             </intent-filter>
         </activity>
 
-        <!--<meta-data-->
-            <!--android:name="com.google.android.awareness.API_KEY"-->
-            <!--android:value="AIzaSyCuucbBEnhQl4wxf68KNOS9-LFr1l6-NxU"/>-->
+        <meta-data
+            android:name="com.google.android.awareness.API_KEY"
+            android:value="AIzaSyCuucbBEnhQl4wxf68KNOS9-LFr1l6-NxU"/>
     </application>
 
 </manifest>
