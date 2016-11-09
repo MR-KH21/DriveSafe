@@ -15,7 +15,7 @@ Library detects if the user is driving a car or riding a bicycle ( using the awa
 
 * In your Custom Application class call :
 
-     DriveSafe.init(this);
+             DriveSafe.init(this);
      
 
 The dev branch has a sample app please give it a look.
