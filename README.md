@@ -5,6 +5,14 @@ Library detects if the user is driving a car or riding a bicycle ( using the awa
 
 * Add the liberary as a module to your android studio project.
 * Add it as a module dependency to your app.
+* Add the meta data to your app manifiest as below :
+
+            <application ...
+                    <meta-data
+                           android:name="com.google.android.awareness.API_KEY"
+                           android:value="-your awarness api key-"/>
+            </application>
+
 * In your Custom Application class call :
 
      DriveSafe.init(this);
