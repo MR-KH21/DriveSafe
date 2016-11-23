@@ -1,7 +1,7 @@
 # DriveSafe
 Library detects if the user is driving a car or riding a bicycle ( using the awareness API ) and alert him/her.
 
-# How to use :
+# How to DriveSafe :
 
 * Add the liberary as a module to your android studio project.
 * Add it as a module dependency to your app.
